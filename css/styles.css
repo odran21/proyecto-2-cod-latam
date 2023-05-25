@@ -65,8 +65,8 @@ main {
 /*
 /*
 
-/*-------------------- MOBILE --------------------*/
-@media (max-width: 767px) {
+/*-------------------- MOBILE & TABLETS --------------------*/
+@media (max-width: 900px) {
   /* header */
   header {
     height: 90px;
@@ -83,6 +83,37 @@ main {
     height: 90px;
   }
 
+  .menu-desktop {
+    display: none;
+  }
+
+  .toggle {
+    cursor: pointer;
+  }
+
+  .toggle span {
+    display: block;
+    width: 50px;
+    height: 4px;
+    background: black;
+    transition: all 0.3s;
+    transform-origin: 5px 3px;
+    margin-bottom: 10px;
+  }
+
+  .toggle.open span:first-child {
+    transform: rotate(45deg);
+  }
+
+  .toggle.open span:nth-child(2){
+    opacity: 0;
+  }
+
+  .toggle.open span:last-child {
+    transform: rotate(-45deg);
+  }
+
+
   nav {
     display: flex;
     align-items: center;
@@ -98,7 +129,7 @@ main {
 
   nav ul li {
     padding: 0.5rem;
-    margin-right: 1rem;
+    margin-right: 10px;
   }
 
   nav a {
@@ -215,8 +246,8 @@ main {
   }
 }
 
-/*-------------------- TABLETS --------------------*/
-@media (max-width: 1024px) {
+/*-------------------- DESKTOP --------------------*/
+@media (min-width: 901px) {
   /* header */
   header {
     height: 100px;
@@ -231,6 +262,10 @@ main {
 
   header nav div .logo {
     height: 100px;
+  }
+
+  .menu-mobile {
+    display: none;
   }
 
   nav {
@@ -363,42 +398,4 @@ main {
     align-items: center;
     justify-content: center;
   }
-}
-
-/*-------------------- DESKTOP --------------------*/
-#contenedor {
-  display: flex;
-}
-
-#contenedor-img {
-  width: 50%;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-}
-
-#inicio img {
-  /* */
-  height: auto;
-  border-radius: 50%;
-  object-fit: cover;
-  padding: 2rem;
-  margin-left: 5rem;
-}
-
-h1 {
-  font-size: 42px;
-  /* 1 */
-  padding: 1rem;
-  color: blueviolet;
-  text-transform: uppercase;
-  /* 2 */
-  text-align: right;
-  margin: 8rem;
-}
-
-.hola p {
-  margin: 0 10rem;
-  text-align: center;
-  padding: 1rem;
 }

@@ -8,6 +8,7 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="css/styles.css" />
+    <script defer src="js/main.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
     <link
       rel="icon"
@@ -27,11 +28,27 @@
             alt="Eidos Global"
           />
         </div>
-        <ul>
-          <li><a href="#inicio">Inicio</a></li>
-          <li><a href="#contacto">Contacto</a></li>
-          <li><a href="#proyectos">Proyectos</a></li>
-        </ul>
+        <div class="menu-mobile">
+          <div class="toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <ul>
+            <li><a href="#menu-mobile">menu-mobile</a></li>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+            <li><a href="#proyectos">Proyectos</a></li>
+          </ul>
+        </div>
+        <div class="menu-desktop">
+          <ul>
+            <li><a href="#menu-desktop">menu-desktop</a></li>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+            <li><a href="#proyectos">Proyectos</a></li>
+          </ul>
+        </div>
       </nav>
     </header>
 
@@ -40,15 +57,13 @@
     <main>
       <section id="inicio">
         <article class="hola">
-          <div id="contenedor">
-            <div id="contenedor-img">
-              <img
-                src="https://s3.ap-south-1.amazonaws.com/isupportcause/uploads/overlay/isupportimg_1509030775429.png"
-                alt="Imagen"
-              />
-            </div>
-            <h1>Hola, soy José Leonardo Guevara Muñoz</h1>
+          <div>
+            <img
+              src="https://s3.ap-south-1.amazonaws.com/isupportcause/uploads/overlay/isupportimg_1509030775429.png"
+              alt="Imagen"
+            />
           </div>
+          <h1>Hola, soy José Leonardo Guevara Muñoz</h1>
           <p>
             Puedo emplear mis conocimientos en la implementación de proyectos,
             lo que me ha permitido adquirir una sólida experiencia y
