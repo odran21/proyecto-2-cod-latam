@@ -12,9 +12,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
     <link
       rel="icon"
-      href="https://ae01.alicdn.com/kf/Uec935a1cff18458f99282eea36082dbfv/L-mpara-Nintendo-Super-Mario-Super-Star-con-sonido-Luigi-Videojuego-Super-estrella-Icon-Colecci-n.jpg_Q90.jpg_.webp"
+      href="https://previews.123rf.com/images/123vector/123vector1807/123vector180700687/105422385-dise%C3%B1o-de-icono-de-le%C3%B3n-de-vector-sobre-fondo-blanco.jpg"
       type="image/png"
-      sizes="32x32"
+      sizes="X3"
     />
   </head>
 
@@ -29,17 +29,19 @@
           />
         </div>
         <div class="menu-mobile">
-          <div class="toggle">
+          <div class="icono-menu" id="icono-menu">
             <span></span>
             <span></span>
             <span></span>
           </div>
-          <ul>
-            <li><a href="#menu-mobile">menu-mobile</a></li>
-            <li><a href="#inicio">Inicio</a></li>
-            <li><a href="#proyectos">Proyectos</a></li>
-            <li><a href="#contacto">Contacto</a></li>
-          </ul>
+          <div class="cont-menu">
+            <ul>
+              <li><a href="#menu-mobile">menu-mobile</a></li>
+              <li><a href="#inicio">Inicio</a></li>
+              <li><a href="#proyectos">Proyectos</a></li>
+              <li><a href="#contacto">Contacto</a></li>
+            </ul>
+          </div>
         </div>
         <div class="menu-desktop">
           <ul>
@@ -59,7 +61,7 @@
         <article class="hola">
           <div>
             <img
-              src="https://s3.ap-south-1.amazonaws.com/isupportcause/uploads/overlay/isupportimg_1509030775429.png"
+              src="img/500x500.jpg"
               alt="Imagen"
             />
           </div>
@@ -87,12 +89,6 @@
           </p>
         </article>
       </section>
-      <!-- Otra forma de hacer el boton seria: 
-        <section>
-            <button name="Mi CV" type="button"><a href="https://drive.google.com/file/d/1DX6aVp1BoSsAucTeQMKc9SKOz1gsyffU/view?usp=sharing" target="_blank">Descargar mi CV</a></button>
-        </section>
-        pero esta manera me parecio interesante.
-    -->
       <form
         class="cv"
         action="https://drive.google.com/file/d/1DX6aVp1BoSsAucTeQMKc9SKOz1gsyffU/view?usp=sharing"
@@ -101,10 +97,8 @@
         <input type="submit" value="Descargar mi CV" />
       </form>
       <section id="proyectos">
-        <h2> Mis Proyectos favoritos </h2>
-        <ul id="proyectos-list">
-         
-        </ul>
+        <h2>Mis Proyectos</h2>
+        <ul id="proyectos-list"></ul>
       </section>
       <section id="contacto">
         <article class="hablemos">
