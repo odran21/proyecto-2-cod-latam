@@ -82,32 +82,98 @@ main {
   box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.3);
 }
 
-header nav div .logo {
+div .logo {
   height: 90px;
+  float: left;
 }
 
 nav {
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
 }
 
 nav ul {
   list-style: none;
   margin: 0;
   padding: 0;
-  display: flex;
+  display: block;
 }
 
 nav ul li {
-  padding: 0.5rem;
-  margin-right: 1rem;
+  margin-top: 1rem;
+}
+
+nav ul li a{
+  display: block;
+  padding: 20px 50px;
 }
 
 nav a {
   text-decoration: none;
   font-weight: bold;
   transition: color 0.5s ease;
+}
+
+/* Menu Hamburguesa */
+
+.icono-menu {
+  margin: 20px 30px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 10;
+  cursor: pointer;
+}
+
+.icono-menu span {
+  display: block;
+  width: 40px;
+  height: 4px;
+  background: black;
+  transition: all 0.3s;
+  transform-origin: 5px 3px;
+  margin: 10px 0 10px 0;
+  border-radius: 25px;
+}
+
+/* Estilos para el contenedor del menú */
+.cont-menu {
+  box-shadow: -2px 2px 5px 2px rgba(0, 0, 0, 0.2);
+  width: 200px;
+  position: fixed;
+  top: 0;
+  right: -200px; /* Inicialmente oculto */
+  transition: all 0.5s ease;
+}
+
+/* Estilos para el listado del menú */
+.cont-menu ul {
+  padding: 20px 0px 20px 0px;
+}
+
+.cont-menu ul li {
+  color:#0f0f0f;
+  display: block;
+  font-size: 50px;
+  text-decoration: none;
+  padding: 10px 10px;
+  cursor: pointer;
+  text-align: center;
+}
+
+/* Estilos para el botón de menú abierto */
+.icono-menu.open span:nth-child(1) {
+  transform: rotate(45deg) translate(7px, 7px);
+}
+
+/* Estilos por agregar en JavaScript */
+.active {
+  transform: translate(-200px);
+  background: #af599e;
+}
+
+.opacity {
+  transition: all 0.5s ease;
 }
 
 #inicio #contacto #proyectos {
@@ -140,7 +206,7 @@ nav a {
   border-radius: 50%;
   object-fit: cover;
   display: block;
-  margin: auto;
+  margin: 8rem auto 2rem auto;
   border: 10px solid #af599e;
 }
 
@@ -149,7 +215,7 @@ h1 {
   /* */
   text-align: center;
   padding: 1rem;
-  margin-top: 5rem;
+  margin-top: 3rem;
 }
 
 .hola p {
@@ -170,16 +236,16 @@ form input {
   /* */
   border-radius: 50px;
   padding: 1rem 2rem;
-  margin-bottom: 4rem;
 }
 
 /* Proyectos */
 #proyectos { 
   padding: 3rem;
+
 }
 #proyectos h2 {
   text-align: center;
-  margin-top: 2rem;
+  margin-top: 5rem;
   font-size: 28px;
 }
 #proyectos li {
@@ -215,6 +281,7 @@ form input {
   background-color: transparent;
   text-align: center;
   padding-top: 50px;
+  margin-top: 2rem;
 }
 
 #contacto p {

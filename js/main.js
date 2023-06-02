@@ -1,9 +1,9 @@
-const iconoMenu = document.querySelector('#icono-menu');
-const menu = document.querySelector('#menu');
+const iconoMenu = document.querySelector(".icono-menu");
+const menu = document.querySelector(".cont-menu");
 
-iconoMenu.addEventListener('click', function() {
-    menu.classList.toggle('active');
-    document.body.classList.toggle('opacity');
+iconoMenu.addEventListener("click", function () {
+  menu.classList.toggle("active");
+  document.body.classList.toggle("opacity");
 });
 
 //---------- Proyectos ----------//
