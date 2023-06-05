@@ -10,12 +10,17 @@ iconoMenu.addEventListener("click", function () {
 let proyectos = [
   {
     nombre: "Futuro Proyecto 1",
-    tipo: "Primer",
+    tipo: "...",
     img: "https://i0.wp.com/loquesigue.tv/wp-content/uploads/2019/03/img-html.jpg?fit=720%2C405&ssl=1 ",
   },
   {
     nombre: "Futuro Proyecto 2",
-    tipo: "Segundo",
+    tipo: "...",
+    img: "https://i0.wp.com/loquesigue.tv/wp-content/uploads/2019/03/img-html.jpg?fit=720%2C405&ssl=1",
+  },
+  {
+    nombre: "Futuro Proyecto 3",
+    tipo: "...",
     img: "https://i0.wp.com/loquesigue.tv/wp-content/uploads/2019/03/img-html.jpg?fit=720%2C405&ssl=1",
   },
 ];

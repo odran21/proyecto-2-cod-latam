@@ -426,6 +426,39 @@ section footer {
     margin-left: 35rem;
   }
 
+  /* Proyectos */
+#proyectos { 
+  padding: 3rem;
+
+}
+#proyectos h2 {
+  text-align: center;
+  margin: 6rem 1rem 3rem 1rem;
+  font-size: 28px;
+}
+
+#proyectos ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  list-style: none;
+  padding: 0;
+}
+
+#proyectos li {
+    border: 10px solid #af599e;
+    border-radius: 20px;
+    margin: 5px;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+#proyectos li img {
+  width: 150px;
+}
+
   /* contacto */
   #contacto .hablemos {
     background-color: rgba(175, 89, 158, 0.3);
