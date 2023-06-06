@@ -69,7 +69,7 @@ main {
 /*
 
 /*-------------------- MOBILE & TABLETS --------------------*/
-@media (max-width: 900px) {
+@media (max-width: 800px) {
  /* header */
  header {
   max-height: 90px;
@@ -202,12 +202,12 @@ nav a {
   max-width: 400px;
   /* */
   width: 100%;
-  height: 100% auto;
+  height: auto;
   border-radius: 50%;
   object-fit: cover;
   display: block;
   margin: 6rem auto 2rem auto;
-  border: 6px solid #af599e;
+  border: 10px double #af599e;
 }
 
 h1 {
@@ -314,7 +314,7 @@ section footer {
 }
 
 /*-------------------- DESKTOP --------------------*/
-@media (min-width: 901px) {
+@media (min-width: 801px) {
   /* header */
   header {
     height: 100px;
@@ -325,6 +325,7 @@ section footer {
     right: 0;
     width: 100%;
     box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.3);
+    z-index: 10;
   }
 
   header nav div .logo {
@@ -350,7 +351,7 @@ section footer {
 
   nav ul li {
     padding: 0.5rem;
-    margin-right: 2rem;
+    margin-right: 4rem;
   }
 
   nav a {
@@ -378,7 +379,7 @@ section footer {
   }
   .hola div {
     display: inline-block;
-    margin-top: 10rem;
+    margin-top: 12rem;
     width: 50%;
   }
 
@@ -392,7 +393,7 @@ section footer {
     border-radius: 50%;
     object-fit: cover;
     display: inline-block;
-    border: 10px solid #af599e;    
+    border: 20px double #af599e;    
   }
 
   h1 {
@@ -400,7 +401,7 @@ section footer {
     /* */
     text-align: center;
     padding: 1rem;
-    margin-top: 4rem;
+    margin-top: 3rem;
     color: blueviolet;
   }
 
@@ -415,6 +416,11 @@ section footer {
   .cv {
     text-align: center;
   }
+  form input:hover {
+    transform: scale(1.1);
+    background-color: #cea3c5;
+
+  }
   form input {
     background-color: #af599e;
     color: #fbfbfb;
@@ -422,13 +428,14 @@ section footer {
     /* */
     border-radius: 50px;
     padding: 1rem 2rem;
-    margin-bottom: 12rem;
+    margin-bottom: 4rem;
     margin-left: 35rem;
+    transition: transform 0.3s ease;
   }
 
   /* Proyectos */
 #proyectos { 
-  padding: 3rem;
+  padding: 10rem;
 
 }
 #proyectos h2 {
@@ -451,24 +458,27 @@ section footer {
     margin: 5px;
     padding: 8px;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: space-around;
+    transition: transform 0.3s ease;
+  }
+  #proyectos li:hover {
+    transform: scale(1.2);
   }
 
 #proyectos li img {
-  width: 150px;
+  width: 200px;
 }
 
   /* contacto */
   #contacto .hablemos {
     background-color: rgba(175, 89, 158, 0.3);
     color: #0f0f0f;
-    margin-bottom: 30px;
     border-radius: 10px;
     padding-top: 3rem;
-    padding-bottom: 20px;
-    margin-right: 1.5rem;
-    margin-left: 1.5rem;
+    padding-bottom: 3rem;;
+    margin: 5rem 2rem 3rem 2rem;
   }
 
   #contacto h2 {
