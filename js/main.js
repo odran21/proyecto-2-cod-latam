@@ -1,3 +1,4 @@
+//Menú Hamburguesa desplegable
 const iconoMenu = document.querySelector(".icono-menu");
 const menu = document.querySelector(".cont-menu");
 
@@ -6,7 +7,7 @@ iconoMenu.addEventListener("click", function () {
   document.body.classList.toggle("opacity");
 });
 
-//---------- Proyectos ----------//
+//---------- Seccion Proyectos ----------//
 let proyectos = [
   {
     nombre: "Futuro Proyecto 1",
@@ -43,4 +44,18 @@ const listaProyectos = document.querySelector("#proyectos-list");
 proyectos.forEach(function (proyecto) {
   let proyectoListItem = crearHTMLProyectos(proyecto);
   listaProyectos.appendChild(proyectoListItem);
+});
+
+// Click en el NAV Cambia de color
+const menuItems = document.querySelectorAll("nav ul li a");
+
+
+menuItems.forEach(function (item) {
+  item.addEventListener("click", function (event) {
+    menuItems.forEach(function (item) {
+      item.parentElement.classList.remove("active");
+    });
+
+    event.target.parentElement.classList.add("active");
+  });
 });
