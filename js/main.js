@@ -1,10 +1,17 @@
 //Menú Hamburguesa desplegable
 const iconoMenu = document.querySelector(".icono-menu");
 const menu = document.querySelector(".cont-menu");
+const menuItems = document.querySelectorAll(".cont-menu ul li");
 
 iconoMenu.addEventListener("click", function () {
   menu.classList.toggle("active");
   document.body.classList.toggle("opacity");
+});
+
+menuItems.forEach((item) => {
+  item.addEventListener("click", (event) => {
+    event.stopPropagation();
+  });
 });
 
 //---------- Seccion Proyectos ----------//
@@ -31,7 +38,6 @@ function crearHTMLProyectos(proyecto) {
   imagenProyecto.src = proyecto.img;
   imagenProyecto.alt = proyecto.nombre;
 
-
   let listItem = document.createElement("li");
   listItem.appendChild(nombreProyecto);
   listItem.appendChild(imagenProyecto);
@@ -46,16 +52,14 @@ proyectos.forEach(function (proyecto) {
   listaProyectos.appendChild(proyectoListItem);
 });
 
-// Click en el NAV Cambia de color
-const menuItems = document.querySelectorAll("nav ul li a");
+//Cambio de color a los enlaces del menu hamburguesa
+const enlaces = document.querySelectorAll(".cont-menu ul li a");
 
-
-menuItems.forEach(function (item) {
-  item.addEventListener("click", function (event) {
-    menuItems.forEach(function (item) {
-      item.parentElement.classList.remove("active");
+enlaces.forEach((enlace) => {
+  enlace.addEventListener("click", function () {
+    enlaces.forEach((enlace) => {
+      enlace.style.color = ""; // Restaura el color original de todos los enlaces
     });
-
-    event.target.parentElement.classList.add("active");
+    this.style.color = "white"; // Cambia el color del enlace al que se le ha hecho clic
   });
 });
