@@ -370,17 +370,20 @@ main {
 
   nav ul li {
     padding: 0.5rem;
-    margin-right: 4rem;
+    margin-right: 5rem;
     background: #dc2f02;
   }
 
   nav ul li:hover {
     color: #fbfbfb;
+    transform: scale(1.1);
+    background-color: #fbff3f;
+    border-radius: 25px;
   }
 
   nav ul li.active {
     background-color: #fbff3f;
-    border-radius: 20px;
+    border-radius: 25px;
   }
 
   nav a {
@@ -509,7 +512,7 @@ main {
     color: #0f0f0f;
     border-radius: 10px;
     padding: 3rem 0;
-    margin: 5rem 0;
+    margin: 8rem 0;
   }
 
   #contacto h2 {
@@ -518,7 +521,7 @@ main {
     background-color: transparent;
     text-align: center;
     padding-top: 50px;
-    color: #9d0208;
+    margin-top: 3rem;
   }
 
   #contacto p {
@@ -535,7 +538,11 @@ main {
     justify-content: space-evenly;
     margin-top: 4rem;
     margin-bottom: 5rem;
-    color: #9d0208;
+  }
+
+  .icon ul li a:hover {
+    transform: scale(1.1);
+    background-color: #dc2f02;
   }
 
   /* footer */
