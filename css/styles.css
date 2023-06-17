@@ -127,6 +127,7 @@ main {
     display: flex;
     justify-content: flex-end;
     background-color: transparent;
+    
   }
 
   .icono-menu {
@@ -137,14 +138,32 @@ main {
     background-color: transparent;
   }
 
+  .icono-menu.active {
+    transform: translate(0px);
+    background-color: #fbfbfb;
+    transition: all 1s ease;
+  }
+
   .icono-menu span {
     display: block;
     width: 40px;
     height: 4px;
     background: black;
-    transition: all 0.3s;
+    transition: transform 0.3s;
     margin: 10px 0;
     border-radius: 25px;
+  }
+
+  .icono-menu.active span:nth-child(1) {
+    transform: translateY(14px) rotate(45deg);
+  }
+  
+  .icono-menu.active span:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .icono-menu.active span:nth-child(3) {
+    transform: translateY(-14px) rotate(-45deg);
   }
 
   /* Estilos para el contenedor del menú */
@@ -155,10 +174,11 @@ main {
     height: 100vh;
     position: absolute;
     top: 0;
-    right: 0px;
-    transition: all 0.5s ease;
+    right: -400px;
+    transition: all 0.8s ease;
     margin-top: 95px;
     display: flex;
+    justify-content: center;
   }
 
   /* Estilos para el listado del menú */
@@ -175,7 +195,6 @@ main {
     font-size: 25px;
     text-decoration: none;
     padding: 10px 50px;
-    cursor: pointer;
   }
 
   .cont-menu ul li.active {
@@ -189,11 +208,11 @@ main {
 
   /* Estilos por agregar en JavaScript */
   .active {
-    transform: translate(600px);
+    transform: translate(-400px);
   }
 
   .opacity {
-    background-color: rgba(0, 0, 0, 0, .5);
+    /*background-color: rgba(0, 0, 0, 0, .5);*/
     transition: all 0.5s ease;
   }
 

@@ -1,9 +1,11 @@
 //Menú Hamburguesa desplegable
 const iconoMenu = document.querySelector(".icono-menu");
 const menu = document.querySelector(".cont-menu");
+const menuMobile = document.querySelector(".icono-menu")
 
 iconoMenu.addEventListener("click", function () {
   menu.classList.toggle("active");
+  menuMobile.classList.toggle("active");
   document.body.classList.toggle("opacity");
 });
 
