@@ -1,7 +1,7 @@
-//Menú Hamburguesa desplegable
+//----------    Menú Hamburguesa desplegable    ----------//
 const iconoMenu = document.querySelector(".icono-menu");
 const menu = document.querySelector(".cont-menu");
-const menuMobile = document.querySelector(".icono-menu")
+const menuMobile = document.querySelector(".icono-menu");
 
 iconoMenu.addEventListener("click", function () {
   menu.classList.toggle("active");
@@ -9,7 +9,7 @@ iconoMenu.addEventListener("click", function () {
   document.body.classList.toggle("opacity");
 });
 
-//---------- Seccion Proyectos ----------//
+//----------     Seccion Proyectos    ----------//
 let proyectos = [
   {
     nombre: "Futuro Proyecto 1",
@@ -33,7 +33,6 @@ function crearHTMLProyectos(proyecto) {
   imagenProyecto.src = proyecto.img;
   imagenProyecto.alt = proyecto.nombre;
 
-
   let listItem = document.createElement("li");
   listItem.appendChild(nombreProyecto);
   listItem.appendChild(imagenProyecto);
@@ -48,9 +47,8 @@ proyectos.forEach(function (proyecto) {
   listaProyectos.appendChild(proyectoListItem);
 });
 
-// Click en el NAV Cambia de color
+//----------     Click en el NAV Cambia de color      ----------//
 const menuItems = document.querySelectorAll("nav ul li a");
-
 
 menuItems.forEach(function (item) {
   item.addEventListener("click", function (event) {
@@ -61,3 +59,16 @@ menuItems.forEach(function (item) {
     event.target.parentElement.classList.add("active");
   });
 });
+
+//----------     Dark Mode      ----------//
+const colorSwitch = document.querySelector('#switch input[type="checkbox"]');
+const colorSwitchDesktop = document.querySelector('#switch-desktop input[type="checkbox"]');
+function cambiaTema(ev) {
+  if (ev.target.checked) {
+    document.documentElement.setAttribute("tema", "light");
+  } else {
+    document.documentElement.setAttribute("tema", "dark");
+  }
+}
+colorSwitch.addEventListener("change", cambiaTema);
+colorSwitchDesktop.addEventListener("change", cambiaTema);

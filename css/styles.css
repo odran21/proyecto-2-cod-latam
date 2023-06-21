@@ -17,10 +17,9 @@
   /* Para que el scrolleo en la one page sea suave */
   scroll-behavior: smooth;
   /*  */
-  background-color: #fbfbfb;
   font-size: 20px;
   line-height: 1.2;
-  font-family: "Salsa", "Lato", sans-serif, cursive;
+  font-family: "Salsa", sans-serif;
 }
 
 /* Para quitar los puntos a los items de listas */
@@ -66,7 +65,29 @@ main {
 
 /* Deben aplicar flexbox para alinear y distribuir los elementos.
 /*
-/*
+*/
+:root {
+  --color-fuente: #000000;
+  --color-fondo: #ffffff;
+  --color-h1: #cc2126;
+  --color-padding: #fcce5c;
+  --color-nav: #dc2f02;
+  --color-header: linear-gradient(to bottom, #ff0000, #dc2f02, #ffba08, #fffbfb);
+}
+
+[tema="light"]{
+  --color-fuente: #fbfbfb;
+  --color-fondo: #222;
+  --color-h1: #fff;
+  --color-padding: #888;
+  --color-nav: #333;
+  --color-header: linear-gradient(to bottom, #000, #444, #888, #fff);
+}
+
+body {
+  background-color:var(--color-fondo);
+  color:var(--color-fuente) 
+}
 
 /*-------------------- MOBILE & TABLETS --------------------*/
 @media (max-width: 900px) {
@@ -84,32 +105,29 @@ main {
 
   div .logo {
     height: 90px;
+    margin: 0px 0px -5px;
   }
 
   nav {
     display: flex;
     align-items: center;
-    background-color: #dc2f02;
+    background: var(--color-header);
     position: relative;
     justify-content: space-between;
+    max-height: 90px;
   }
 
   nav ul {
     margin: 0;
     padding: 0;
     display: flex;
-    background-color: #dc2f02;
     flex-direction: column;
     align-content: center
   }
 
-  nav ul li {
-    background-color: transparent;
-  }
-
   nav ul li a {
     display: block;
-    background-color: transparent;
+    padding: 10px;
   }
 
   nav a {
@@ -117,6 +135,67 @@ main {
     font-weight: bold;
     transition: color 0.5s ease;
   }
+
+  /*Botón de cambio de tema*/
+  
+#switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+#switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color:var(--color-fuente);
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color:var(--color-fondo);
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: var(--color-fuente);
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px var(--color-fuente);
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
 
   /* ---------- Menu Hamburguesa ----------*/
   .menu-desktop {
@@ -151,7 +230,7 @@ main {
     background: black;
     transition: transform 0.3s;
     margin: 10px 0;
-    border-radius: 25px;
+    border-radius: 30px;
   }
 
   .icono-menu.active span:nth-child(1) {
@@ -168,7 +247,7 @@ main {
 
   /* Estilos para el contenedor del menú */
   .cont-menu {
-    background-color: #dc2f02;
+    background-color: var(--color-nav);
     box-shadow: -160px 0px 0px 0px rgba(66, 66, 66, .9);
     width: 200px;
     height: 100vh;
@@ -176,7 +255,7 @@ main {
     top: 0;
     right: -400px;
     transition: all 0.8s ease;
-    margin-top: 95px;
+    margin-top: 90px;
     display: flex;
     justify-content: center;
   }
@@ -190,11 +269,10 @@ main {
   }
 
   .cont-menu ul li {
-    color: black;
+    /*color: black;*/
     display: block;
     font-size: 25px;
     text-decoration: none;
-    padding: 10px 50px;
   }
 
   .cont-menu ul li.active {
@@ -212,7 +290,6 @@ main {
   }
 
   .opacity {
-    /*background-color: rgba(0, 0, 0, 0, .5);*/
     transition: all 0.5s ease;
   }
 
@@ -243,7 +320,7 @@ main {
     display: block;
     margin: 6rem auto 2rem auto;
     padding: 10px;
-    border: 10px double #e7aa26;
+    border: 10px double var(--color-padding);
   }
 
   h1 {
@@ -252,7 +329,7 @@ main {
     text-align: center;
     padding: 1rem;
     margin-top: 3rem;
-    color: #cc2126;
+    color: var(--color-h1);
   }
 
   .hola p {
@@ -267,8 +344,8 @@ main {
     text-align: center;
   }
   form input {
-    background-color: #9d0208;
-    color: #fbfbfb;
+    background-color: var(--color-padding);
+    color: var(--color-fuente);
     font-size: 20px;
     /* */
     border-radius: 50px;
@@ -278,7 +355,6 @@ main {
   /* Proyectos */
   #proyectos {
     padding: 3rem;
-    background: linear-gradient(to bottom, #fbfbfb, #ffba08);
   }
   #proyectos h2 {
     text-align: center;
@@ -287,7 +363,7 @@ main {
     background: transparent;
   }
   #proyectos li {
-    border: 10px solid #9d0208;
+    border: 10px solid var(--color-padding);
     border-radius: 20px;
     margin: 5px 5px 20px 5px;
     padding: 8px;
@@ -312,9 +388,6 @@ main {
   }
 
   /* contacto */
-  #contacto {
-    background: linear-gradient(to bottom, #ffba08, #fbfbfb);
-  }
 
   #contacto .hablemos {
     color: #0f0f0f;
@@ -324,7 +397,7 @@ main {
     padding-bottom: 20px;
     margin-right: 1.5rem;
     margin-left: 1.5rem;
-    background-color: #fcce5c;
+    background-color: var(--color-padding);
   }
 
   #contacto h2 {
@@ -355,7 +428,7 @@ main {
 
   /* footer */
   section footer {
-    background-color: #d00000;
+    background: var(--color-header);
     color: #fbfbfb;
     /* */
     height: 90px;
@@ -383,6 +456,7 @@ main {
   header nav div .logo {
     height: 100px;
     background-color: #d0efb0;
+    margin: -6px;
   }
 
   .menu-mobile {
@@ -393,7 +467,7 @@ main {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #dc2f02;
+    background: var(--color-header);
   }
 
   nav ul {
@@ -401,13 +475,11 @@ main {
     margin: 0;
     padding: 0;
     display: flex;
-    background-color: #dc2f02;
   }
 
   nav ul li {
     padding: 0.5rem;
-    margin-right: 5rem;
-    background: #dc2f02;
+    margin: auto 4rem;
   }
 
   nav ul li:hover {
@@ -426,8 +498,50 @@ main {
     text-decoration: none;
     font-weight: bold;
     transition: color 0.5s ease;
-    background: transparent;
+    color: var(--color-fuente);
   }
+
+  .darkModeSwitch{
+    background: #113528;
+    display:flex;
+    position: relative;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    border-radius: 1rem;
+    align-items: center;
+    justify-content: space-between;
+}
+.darkModeSwitch span{
+    width:30px;
+    height:15px;
+    line-height:30px;
+    display:block;
+    color:#fff;
+
+    background: none;
+}
+.darkModeSwitch::after{
+    display:block;
+    background: #042d26de;
+    width: 1.9rem;
+    height: 1.9rem;
+    position: absolute;
+    top:0;
+    left:0;
+    right:unset;
+    border-radius: 3rem;
+    transition: all .5s ease;
+
+    content: "";
+}
+.darkModeSwitch.active{
+  background: #030e2a;
+}
+.darkModeSwitch.active::after{
+  left:unset;
+  right:0;
+}
 
   #inicio #contacto #proyectos {
     min-height: 100vh;
@@ -461,7 +575,7 @@ main {
     border-radius: 50%;
     object-fit: cover;
     display: inline-block;
-    border: 20px double #03071e;
+    border: 20px double #000;
   }
 
   h1 {
@@ -470,7 +584,7 @@ main {
     text-align: center;
     padding: 1rem;
     margin-top: 1rem;
-    color: #cc2126;
+    color: var(--color-h1);
   }
 
   .hola p {
