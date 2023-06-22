@@ -1,20 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Dancing+Script&family=Lato:wght@400;700&family=Salsa&display=swap");
 
-/* En este archivo escriban su CSS */
-
-/* Fonts */
-/* Importar aquí la font */
-
-/* Aquí les dejamos como ayuda este "reset" en el cual ajustamos algunas propiedades
-*  cuyos valores asigna por defecto el navegador.
-*/
-
 /* Reset */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  /* Para que el scrolleo en la one page sea suave */
   scroll-behavior: smooth;
   /*  */
   font-size: 20px;
@@ -22,7 +12,6 @@
   font-family: "Salsa", sans-serif;
 }
 
-/* Para quitar los puntos a los items de listas */
 ul {
   list-style: none;
   /* */
@@ -30,63 +19,46 @@ ul {
   flex-wrap: wrap;
 }
 
-/* Para que los enlaces hereden el color de texto y no tengan subrayado */
 a {
   text-decoration: none;
   color: inherit;
 }
 
-/* Este max-width es para que el contenido no se "estire" demasiado hacia los costados y
-*  el margin: auto; para tenerlo centrado fácilmente ;)
-*/
 main {
   max-width: 1200px;
   margin: auto;
   /* */
 }
 
-/* Recomendaciones! 
-*  - Comenzar desde lo más general y luego ir hacia lo mas específico, asignando primero
-*    "estilos generales". Una buena idea sería comenzar por el <body> ;)
-*
-*  - Recuerden que queremos evitar "repetir código", en CSS usando la cualidad de la herencia
-*    podemos setear ciertas propiedades en un elemento padre y dejar que sean heredadas (por ejemplo: font-size)
-*
-*  - Nadie sabe todas las propiedades CSS de memoria, si no saben como hacer algo no lo recuerdan, la respuesta
-*    pueden encontrarla buscando en la web algo como "CSS como hacer ... " o "propiedad css para hacer ..."
-*
-*  - Usen mucho las herramientas para desarrolladores del navegador para ir
-*    probando el CSS que escriben, resolver dudas y problemas.
-*
-*  - Paciencia, resiliencia y creatividad! No se desanimen, las primeras experiencias maquetando con HTML y CSS
-*    pueden ser frustrantes, pero estas habilidades se van desarrollando con la experiencia, es como aprender
-*    un trabajo manual, hacer una artesanía, tocar un instrumento musical... la práctica es todo!
-*/
-
-/* Deben aplicar flexbox para alinear y distribuir los elementos.
-/*
-*/
 :root {
   --color-fuente: #000000;
   --color-fondo: #ffffff;
   --color-h1: #cc2126;
   --color-padding: #fcce5c;
   --color-nav: #dc2f02;
-  --color-header: linear-gradient(to bottom, #ff0000, #dc2f02, #ffba08, #fffbfb);
+  --color-border: #dc2f02;
+  --color-header: linear-gradient(
+    to bottom,
+    #ff0000,
+    #dc2f02,
+    #ffba08,
+    #fffbfb
+  );
 }
 
-[tema="light"]{
+[tema="light"] {
   --color-fuente: #fbfbfb;
   --color-fondo: #222;
   --color-h1: #fff;
-  --color-padding: #888;
+  --color-padding: #aaa;
   --color-nav: #333;
-  --color-header: linear-gradient(to bottom, #000, #444, #888, #fff);
+  --color-border: #777;
+  --color-header: linear-gradient(to bottom, #000, #444, #888, #85b5f3);
 }
 
 body {
-  background-color:var(--color-fondo);
-  color:var(--color-fuente) 
+  background-color: var(--color-fondo);
+  color: var(--color-fuente);
 }
 
 /*-------------------- MOBILE & TABLETS --------------------*/
@@ -122,7 +94,7 @@ body {
     padding: 0;
     display: flex;
     flex-direction: column;
-    align-content: center
+    align-content: center;
   }
 
   nav ul li a {
@@ -137,65 +109,65 @@ body {
   }
 
   /*Botón de cambio de tema*/
-  
-#switch {
-  position: relative;
-  display: inline-block;
-  width: 60px;
-  height: 34px;
-}
 
-#switch input { 
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
+  #switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+  }
 
-.slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color:var(--color-fuente);
-  -webkit-transition: .4s;
-  transition: .4s;
-}
+  #switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
 
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 26px;
-  width: 26px;
-  left: 4px;
-  bottom: 4px;
-  background-color:var(--color-fondo);
-  -webkit-transition: .4s;
-  transition: .4s;
-}
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--color-fuente);
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+  }
 
-input:checked + .slider {
-  background-color: var(--color-fuente);
-}
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: var(--color-fondo);
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+  }
 
-input:focus + .slider {
-  box-shadow: 0 0 1px var(--color-fuente);
-}
+  input:checked + .slider {
+    background-color: var(--color-fuente);
+  }
 
-input:checked + .slider:before {
-  -webkit-transform: translateX(26px);
-  -ms-transform: translateX(26px);
-  transform: translateX(26px);
-}
+  input:focus + .slider {
+    box-shadow: 0 0 1px var(--color-fuente);
+  }
 
-.slider.round {
-  border-radius: 34px;
-}
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
 
-.slider.round:before {
-  border-radius: 50%;
-}
+  .slider.round {
+    border-radius: 34px;
+  }
+
+  .slider.round:before {
+    border-radius: 50%;
+  }
 
   /* ---------- Menu Hamburguesa ----------*/
   .menu-desktop {
@@ -206,7 +178,6 @@ input:checked + .slider:before {
     display: flex;
     justify-content: flex-end;
     background-color: transparent;
-    
   }
 
   .icono-menu {
@@ -236,11 +207,11 @@ input:checked + .slider:before {
   .icono-menu.active span:nth-child(1) {
     transform: translateY(14px) rotate(45deg);
   }
-  
+
   .icono-menu.active span:nth-child(2) {
     opacity: 0;
   }
-  
+
   .icono-menu.active span:nth-child(3) {
     transform: translateY(-14px) rotate(-45deg);
   }
@@ -248,7 +219,7 @@ input:checked + .slider:before {
   /* Estilos para el contenedor del menú */
   .cont-menu {
     background-color: var(--color-nav);
-    box-shadow: -160px 0px 0px 0px rgba(66, 66, 66, .9);
+    box-shadow: -160px 0px 0px 0px rgba(66, 66, 66, 0.9);
     width: 200px;
     height: 100vh;
     position: absolute;
@@ -280,7 +251,7 @@ input:checked + .slider:before {
     background-color: #e7aa26;
   }
 
-  .cont-menu ul li.active a{
+  .cont-menu ul li.active a {
     color: #fbfbfb;
   }
 
@@ -454,7 +425,7 @@ input:checked + .slider:before {
   }
 
   header nav div .logo {
-    height: 100px;
+    height: 98px;
     background-color: #d0efb0;
     margin: -6px;
   }
@@ -485,12 +456,12 @@ input:checked + .slider:before {
   nav ul li:hover {
     color: #fbfbfb;
     transform: scale(1.1);
-    background-color: #fbff3f;
+    background-color: var(--color-fuente);
     border-radius: 25px;
   }
 
   nav ul li.active {
-    background-color: #fbff3f;
+    background-color: var(--color-fondo);
     border-radius: 25px;
   }
 
@@ -501,47 +472,66 @@ input:checked + .slider:before {
     color: var(--color-fuente);
   }
 
-  .darkModeSwitch{
-    background: #113528;
-    display:flex;
+  /*Botón de cambio de tema*/
+
+  #switch-desktop {
     position: relative;
-    cursor: pointer;
-    outline: none;
-    border: none;
-    border-radius: 1rem;
-    align-items: center;
-    justify-content: space-between;
-}
-.darkModeSwitch span{
-    width:30px;
-    height:15px;
-    line-height:30px;
-    display:block;
-    color:#fff;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+  }
 
-    background: none;
-}
-.darkModeSwitch::after{
-    display:block;
-    background: #042d26de;
-    width: 1.9rem;
-    height: 1.9rem;
+  #switch-desktop input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .slider {
     position: absolute;
-    top:0;
-    left:0;
-    right:unset;
-    border-radius: 3rem;
-    transition: all .5s ease;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--color-fuente);
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+  }
 
+  .slider:before {
+    position: absolute;
     content: "";
-}
-.darkModeSwitch.active{
-  background: #030e2a;
-}
-.darkModeSwitch.active::after{
-  left:unset;
-  right:0;
-}
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: var(--color-fondo);
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+  }
+
+  input:checked + .slider {
+    background-color: var(--color-fuente);
+  }
+
+  input:focus + .slider {
+    box-shadow: 0 0 1px var(--color-fuente);
+  }
+
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+
+  .slider.round {
+    border-radius: 34px;
+  }
+
+  .slider.round:before {
+    border-radius: 50%;
+  }
 
   #inicio #contacto #proyectos {
     min-height: 100vh;
@@ -575,7 +565,7 @@ input:checked + .slider:before {
     border-radius: 50%;
     object-fit: cover;
     display: inline-block;
-    border: 20px double #000;
+    border: 20px double var(--color-border);
   }
 
   h1 {
@@ -600,11 +590,11 @@ input:checked + .slider:before {
   }
   form input:hover {
     transform: scale(1.1);
-    background-color: #dc2f02;
+    background: #85b5f3;
   }
   form input {
-    background-color: #9d0208;
-    color: #fbfbfb;
+    background-color: var(--color-padding);
+    color: var(--color-fuente);
     font-size: 20px;
     /* */
     border-radius: 50px;
@@ -619,13 +609,12 @@ input:checked + .slider:before {
     margin-top: 4rem;
     padding: 4rem;
     border-radius: 20px;
-    background-color: #ffba08;
+    background-color: var(--color-padding);
   }
   #proyectos h2 {
     text-align: center;
     margin: 4rem 2rem;
     font-size: 36px;
-    background-color: #ffba08;
   }
 
   #proyectos ul {
@@ -634,11 +623,10 @@ input:checked + .slider:before {
     justify-content: space-between;
     list-style: none;
     padding: 0;
-    background-color: #ffba08;
   }
 
   #proyectos li {
-    border: 10px solid #9d0208;
+    border: 10px solid var(--color-border);
     border-radius: 20px;
     margin: 5px;
     padding: 2rem;
@@ -650,7 +638,6 @@ input:checked + .slider:before {
   }
   #proyectos li:hover {
     transform: scale(1.2);
-    border: 10px solid #dc2f02;
   }
 
   #proyectos li img {
@@ -659,8 +646,8 @@ input:checked + .slider:before {
 
   /* contacto */
   #contacto .hablemos {
-    background-color: #ffba08;
-    color: #0f0f0f;
+    background-color: var(--color-padding);
+    color: var(--color-fuente);
     border-radius: 10px;
     padding: 3rem 0;
     margin: 8rem 0;
@@ -691,14 +678,13 @@ input:checked + .slider:before {
     margin-bottom: 5rem;
   }
 
-  .icon ul li a:hover {
-    transform: scale(1.1);
-    background-color: #dc2f02;
+  .icon ul li:hover {
+    color: #85b5f3;
   }
 
   /* footer */
   section footer {
-    background-color: #d00000;
+    background: var(--color-header);
     color: #fbfbfb;
     /* */
     height: 90px;
