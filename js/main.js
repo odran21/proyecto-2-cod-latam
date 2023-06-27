@@ -12,16 +12,16 @@ iconoMenu.addEventListener("click", function () {
 //----------     Seccion Proyectos    ----------//
 let proyectos = [
   {
-    nombre: "Futuro Proyecto 1",
-    img: "https://i0.wp.com/loquesigue.tv/wp-content/uploads/2019/03/img-html.jpg?fit=720%2C405&ssl=1 ",
+    nombre: "Calculadora",
+    img: "img/Calculadora.png",
   },
   {
     nombre: "Futuro Proyecto 2",
     img: "https://i0.wp.com/loquesigue.tv/wp-content/uploads/2019/03/img-html.jpg?fit=720%2C405&ssl=1",
   },
   {
-    nombre: "Futuro Proyecto 3",
-    img: "https://i0.wp.com/loquesigue.tv/wp-content/uploads/2019/03/img-html.jpg?fit=720%2C405&ssl=1",
+    nombre: "",
+    img: "https://em-content.zobj.net/source/skype/289/plus_2795.png",
   },
 ];
 

@@ -446,6 +446,8 @@ body {
     margin: 0;
     padding: 0;
     display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
   }
 
   nav ul li {
@@ -456,7 +458,7 @@ body {
   nav ul li:hover {
     color: #fbfbfb;
     transform: scale(1.1);
-    background-color: var(--color-fuente);
+    background-color: var(--color-fondo);
     border-radius: 25px;
   }
 
