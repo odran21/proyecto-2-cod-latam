@@ -452,7 +452,7 @@ body {
 
   nav ul li {
     padding: 0.5rem;
-    margin: auto 4rem;
+    margin: auto 3rem;
   }
 
   nav ul li:hover {
@@ -553,7 +553,7 @@ body {
   }
   .hola div {
     display: inline-block;
-    margin-top: 8rem;
+    margin-top: 6rem;
     width: 50%;
   }
 
@@ -637,6 +637,7 @@ body {
     align-items: center;
     justify-content: space-around;
     transition: transform 0.3s ease;
+    background-color: var(--color-border);
   }
   #proyectos li:hover {
     transform: scale(1.2);
@@ -644,6 +645,7 @@ body {
 
   #proyectos li img {
     width: 200px;
+    border-radius: 10px;
   }
 
   /* contacto */

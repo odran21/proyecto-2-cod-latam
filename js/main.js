@@ -16,8 +16,8 @@ let proyectos = [
     img: "img/Calculadora.png",
   },
   {
-    nombre: "Futuro Proyecto 2",
-    img: "https://i0.wp.com/loquesigue.tv/wp-content/uploads/2019/03/img-html.jpg?fit=720%2C405&ssl=1",
+    nombre: "Slider CoPa",
+    img: "img/Slider.png",
   },
   {
     nombre: "",
@@ -36,6 +36,20 @@ function crearHTMLProyectos(proyecto) {
   let listItem = document.createElement("li");
   listItem.appendChild(nombreProyecto);
   listItem.appendChild(imagenProyecto);
+  
+
+  // Agregar evento de clic al elemento <li>
+  listItem.addEventListener("click", function() {
+    if (proyecto.nombre === "Calculadora") {
+      window.open("https://odran21.github.io/Calculadora/", "_blank");
+    }
+  });
+
+  listItem.addEventListener("click", function() {
+    if (proyecto.nombre === "Slider CoPa") {
+      window.open("https://odran21.github.io/Slider-CoPa/", "_blank");
+    }
+  });
 
   return listItem;
 }
