@@ -20,6 +20,10 @@ let proyectos = [
     img: "img/Slider.png",
   },
   {
+    nombre: "Piedra, Papel, Tijera",
+    img: "img/JuegoPPT.png",
+  },
+  {
     nombre: "",
     img: "https://em-content.zobj.net/source/skype/289/plus_2795.png",
   },
@@ -48,6 +52,11 @@ function crearHTMLProyectos(proyecto) {
   listItem.addEventListener("click", function() {
     if (proyecto.nombre === "Slider CoPa") {
       window.open("https://odran21.github.io/Slider-CoPa/", "_blank");
+    }
+  });
+  listItem.addEventListener("click", function() {
+    if (proyecto.nombre === "Piedra, Papel, Tijera") {
+      window.open("https://odran21.github.io/piedrapapeltijera/", "_blank");
     }
   });
 
