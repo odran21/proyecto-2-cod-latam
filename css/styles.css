@@ -219,13 +219,13 @@ body {
   /* Estilos para el contenedor del menú */
   .cont-menu {
     background-color: var(--color-nav);
-    box-shadow: -160px 0px 0px 0px rgba(66, 66, 66, 0.9);
-    width: 200px;
+    box-shadow: -100px 0px 60px 0px rgba(66, 66, 66, 0.6);
+    width: 50%;
     height: 100vh;
     position: absolute;
     top: 0;
-    right: -400px;
-    transition: all 0.8s ease;
+    right: -500px;
+    transition: all 0.7s ease;
     margin-top: 90px;
     display: flex;
     justify-content: center;
@@ -257,7 +257,7 @@ body {
 
   /* Estilos por agregar en JavaScript */
   .active {
-    transform: translate(-400px);
+    transform: translate(-500px);
   }
 
   .opacity {
